@@ -97,12 +97,17 @@ describe("About Functions", function() {
 
   it("should use function body as a string", function () {
     var add = new Function("a", "b", "return a + b;");
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    expect(add(1, 2)).toBe(3);
 
     var multiply = function (a, b) {
       //An internal comment
       return a * b;
     };
-    expect(multiply.toString()).toBe(FILL_ME_IN);
+    //Is there a better way to format this?
+    expect(multiply.toString()).toBe('function (a, b) {
+      //An internal comment
+      return a * b;
+    }'
+                                    );
   });
 });
