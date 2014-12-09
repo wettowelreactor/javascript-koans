@@ -37,11 +37,15 @@ describe("About Applying What We Have Learnt", function() {
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-      var productsICanEat = [];
+      var productsICanEat = _(products).filter(function(product) {
+        return !_(product.ingredients).contains('mushrooms') && !product.containsNuts;
+      });
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
