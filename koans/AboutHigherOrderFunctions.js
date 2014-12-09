@@ -55,20 +55,20 @@ describe("About Higher Order Functions", function () {
     var onlyEven = [2,4,6];
     var mixedBag = [2,4,5,6];
 
-    var isEven = function(x) { return x % 2 === 0 };
+    var isEven = function(x) { return x % 2 === 0; };
 
-    expect(_(onlyEven).all(isEven)).toBe(FILL_ME_IN);
-    expect(_(mixedBag).all(isEven)).toBe(FILL_ME_IN);
+    expect(_(onlyEven).all(isEven)).toBe(true);
+    expect(_(mixedBag).all(isEven)).toBe(false);
   });
 
   it("should use 'any' to test if any items passes condition" , function () {
     var onlyEven = [2,4,6];
     var mixedBag = [2,4,5,6];
 
-    var isEven = function(x) { return x % 2 === 0 };
+    var isEven = function(x) { return x % 2 === 0; };
 
-    expect(_(onlyEven).any(isEven)).toBe(FILL_ME_IN);
-    expect(_(mixedBag).any(isEven)).toBe(FILL_ME_IN);
+    expect(_(onlyEven).any(isEven)).toBe(true);
+    expect(_(mixedBag).any(isEven)).toBe(true);
   });
 
   it("should use range to generate an array", function() {
