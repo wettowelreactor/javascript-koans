@@ -101,17 +101,34 @@ describe("About Applying What We Have Learnt", function() {
     expect(ingredientCount['mushrooms']).toBe(2);
   });
 
+
+  it("should find the largest prime factor of a composite number", function () {
+    var largestPrimeFactor = function(number) {
+      var maxFactor = 1;
+      var divisor = 2;
+
+      while (number > 1) {
+        while (number % divisor === 0) {
+          if (divisor > maxFactor) {
+            maxFactor = divisor;
+          }
+          number /= divisor;
+        }
+        divisor += 1;
+      }
+
+      return maxFactor;
+    };
+
+    //verified in Wolfram Alpha
+    expect(largestPrimeFactor(1003)).toBe(59);
+    expect(largestPrimeFactor(7234)).toBe(3617);
+    expect(largestPrimeFactor(1000039)).toBe(1000039);
+  });
+
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
   /*
-  it("should find the largest prime factor of a composite number", function () {
-
-  });
-
-  it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-
-  });
-
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
 
